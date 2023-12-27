@@ -13,8 +13,12 @@ async function main() {
 }
 main().catch((err) => console.log(err));
 
+//load css
+app.use(express.static("public"));
+
 //require routers
 const indexRouter = require("./routes/index");
+const catalogRouter = require("./routes/catalog");
 
 //set view engine to ejs
 app.set("views", "./views");
@@ -25,3 +29,4 @@ app.listen(3000);
 
 //load router files
 app.use("/", indexRouter);
+app.use("/catalog", catalogRouter);
