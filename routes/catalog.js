@@ -56,4 +56,21 @@ router.get("/item/:itemID", (req, res) => {
 	getItem();
 });
 
+router.get("/categories/new", (req, res) => {
+	res.render("new_category", { title: "Add New Category" });
+});
+
+router.post("/categories/new", (req, res) => {
+	async function makeNewCategory() {
+		console.log(req.body);
+		const newCategory = new Category({
+			name: req.body.name,
+			desc: req.body.desc,
+		});
+		await newCategory.save();
+		res.render("new_category", { title: "Add New Category" });
+	}
+	makeNewCategory();
+});
+
 module.exports = router;

@@ -1,6 +1,9 @@
 // require modules
 const express = require("express");
 const app = express();
+// used for form submissions
+app.use(express.urlencoded({ extended: true }));
+//used for saving database credentials
 require("dotenv").config();
 
 //set up mongoose connection
