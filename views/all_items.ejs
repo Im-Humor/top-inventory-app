@@ -1,0 +1,24 @@
+<%- include("header"); -%>
+
+    <div class="main-content">
+        <p>These are the available categories:</p>
+        <ul>
+            <% items.forEach((item)=> { %>
+                <li>
+                    <p>
+                        <%= item.name %>
+                    </p>
+                    <p>
+                        <%=item.desc %>
+                    </p>
+                    <p>
+                        <a href="<%= item.url %>">View Item</a>
+                    </p>
+                </li>
+                <% }) %>
+        </ul>
+
+    </div>
+
+
+    <%- include("footer"); -%>
