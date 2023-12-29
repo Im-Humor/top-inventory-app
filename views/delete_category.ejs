@@ -1,0 +1,16 @@
+<%- include("header"); -%>
+
+    <div class="main-content">
+        <h2>Are you sure you would like to delete the following category?</h2>
+        <h3><%= category.name %></h3>
+        <p><%= category.desc %></p>
+    </div>
+
+        <form method="post">
+            <button>
+                Delete
+            </button>
+        </form>
+
+
+    <%- include("footer"); -%>
